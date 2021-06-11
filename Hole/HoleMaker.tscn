@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="HoleMaker" type="CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04204, 0 )
+operation = 2
+radius = 1.0291
+height = 4.48994
+sides = 16

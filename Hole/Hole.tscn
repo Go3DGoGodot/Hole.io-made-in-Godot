@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Hole/Hole.glb" type="PackedScene" id=1]
+[ext_resource path="res://Hole/Hole.gd" type="Script" id=2]
+
+[sub_resource type="CylinderShape" id=8]
+radius = 1.17096
+height = 0.277489
+
+[sub_resource type="CylinderShape" id=9]
+radius = 1.10773
+height = 1.48963
+
+[node name="Hole" instance=ExtResource( 1 )]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="." index="2"]
+transform = Transform( -1, -1.77636e-15, -8.74228e-08, -1.70224e-08, 0.98086, 0.194714, 8.57495e-08, 0.194714, -0.98086, 0, 2.99727, -5.13774 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.154495, 0 )
+shape = SubResource( 8 )
+
+[node name="Area" type="Area" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.400909, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+shape = SubResource( 9 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

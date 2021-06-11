@@ -1,0 +1,8 @@
+{
+	"contains_albedo": true,
+	"resolution": 512,
+	"src": {
+		"a": "res://CommonMaterials/Tiles012_1K-PNG/Tiles012_1K_Displacement.png",
+		"rgb": "res://CommonMaterials/Tiles012_1K-PNG/Tiles012_1K_Color.png"
+	}
+}

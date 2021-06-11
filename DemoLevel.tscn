@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Hole/Hole.tscn" type="PackedScene" id=1]
+[ext_resource path="res://kenney_prototype_textures/dark/texture_01.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=2]
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="BoxShape" id=4]
+
+[node name="DemoLevel" type="Spatial"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+material_override = SubResource( 1 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+material_override = SubResource( 2 )
+width = 100.0
+depth = 100.0
+
+[node name="Hole" parent="CSGCombiner" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04204, 0 )
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="RigidBody" type="RigidBody" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83021, 2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial/RigidBody"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/RigidBody"]
+shape = SubResource( 4 )
+
+[node name="RigidBody2" type="RigidBody" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8246, 2, -2.58587 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial/RigidBody2"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/RigidBody2"]
+shape = SubResource( 4 )
+
+[node name="RigidBody3" type="RigidBody" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9211, 2, 4.87751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial/RigidBody3"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/RigidBody3"]
+shape = SubResource( 4 )
+
+[node name="RigidBody4" type="RigidBody" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8391, 2, -1.76944 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial/RigidBody4"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/RigidBody4"]
+shape = SubResource( 4 )
+
+[node name="RigidBody5" type="RigidBody" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8275, 2, 2.32632 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial/RigidBody5"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/RigidBody5"]
+shape = SubResource( 4 )
+
+[node name="RigidBody6" type="RigidBody" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65467, 2, 6.65584 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial/RigidBody6"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/RigidBody6"]
+shape = SubResource( 4 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.996864, 4.27065e-08, 0.0791378, 0.0245587, 0.95063, 0.309355, -0.0752307, 0.310328, -0.947648, 0, 12.0397, 0 )
