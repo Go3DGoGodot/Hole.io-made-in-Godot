@@ -3,13 +3,13 @@
 [ext_resource path="res://Hole/Hole.glb" type="PackedScene" id=1]
 [ext_resource path="res://Hole/Hole.gd" type="Script" id=2]
 
-[sub_resource type="CylinderShape" id=8]
+[sub_resource type="CylinderShape" id=1]
 radius = 1.17096
 height = 0.277489
 
-[sub_resource type="CylinderShape" id=9]
+[sub_resource type="CylinderShape" id=2]
 radius = 1.10773
-height = 1.48963
+height = 9.13437
 
 [node name="Hole" instance=ExtResource( 1 )]
 collision_layer = 2
@@ -21,12 +21,13 @@ transform = Transform( -1, -1.77636e-15, -8.74228e-08, -1.70224e-08, 0.98086, 0.
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.154495, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="Area" type="Area" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.400909, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
-shape = SubResource( 9 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.34379, 0 )
+shape = SubResource( 2 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

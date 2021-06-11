@@ -27,7 +27,7 @@ func sync_hole_maker():
 	
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		set_hole_size(2)
+		set_hole_size(4)
 	
 func set_hole_size(size:float):
 	scale = Vector3.ONE*size
