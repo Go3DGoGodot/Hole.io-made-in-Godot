@@ -12,6 +12,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="mesh" parent="Building1" index="0"]
 transform = Transform( 2, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 0 )
+use_in_baked_light = true
 
 [node name="shape0" parent="Building1" index="1"]
 shape = SubResource( 1 )
